@@ -1,0 +1,382 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include _head.html %}
+{% include _zoomin.html %}
+
+</head>
+
+<body class="page">
+<style>
+    /*********************************
+     The list of publication items
+     *********************************/
+/* The list of items */
+.biblist { }
+
+/* The item */
+.biblist li { }
+
+/* You can define custom styles for plstyle field here. */
+
+
+/*************************************
+ The box that contain BibTeX code
+ *************************************/
+div.noshow { display: none; }
+div.bibtex {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1em;
+	border: 1px solid silver;
+	padding: 0em 1em;
+	background: #ffffee;
+}
+div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
+<script type="text/javascript">
+    <!--
+    // Toggle Display of BibTeX
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+-->
+    </script>
+
+{% include _browser-upgrade.html %}
+
+{% include _navigation.html %}
+
+{% if page.image.feature %}
+  <div class="image-wrap">
+  <img src=
+    {% if page.image.feature contains 'http://' %}
+      "{{ page.image.feature }}"
+    {% elsif page.image.feature contains 'https://' %}
+      "{{ page.image.feature }}"
+    {% else %}
+      "{{ site.url }}/images/{{ page.image.feature }}"
+    {% endif %}
+  alt="{{ page.title }} feature image">
+  {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
+
+
+<!-- h4 style="margin-bottom:0px;padding-top:10px;">Publications</h4> -->
+<!-- Generated from JabRef by PubList by Truong Nghiem at 11:44 on 2015.09.10. -->
+<ul class="biblist">
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    {% include _author-bio.html %}
+  </div>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <div class="article-wrap">
+      {{ content }}
+
+<!-- Item: Maninis2018b -->
+<li ><p>
+<a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, M. Mahmoud, I. Edo, A. Hadi Zadeh, C. Bannon, A. Moshovos
+<br><b>PRaker : A Processing Element for Accelerating Neural Network Training</b><br>
+<i>54th IEEE/ACM International Symposium on Microarchitecture (MICRO)</i>, 2021.
+<br />
+<a href="javascript:toggleBibtex('FPRakerMICRO2021')" style="color:#FF0000;">[BibTeX]</a>
+<a href="javascript:toggleBibtex('FPRakerMICRO2021abs') " style="color:#FF0000;">[Abstract]</a>
+<a href="https://dl.acm.org/doi/pdf/10.1145/3466752.3480106" target="_blank" style="color:#FF0000;">[PDF]</a>
+<a href="https://drive.google.com/file/d/1apXoEZwRiDcZ1_nNf4lflleJCkih_uB3/view?usp=sharing" style="color:#FF0000;" target="_blank">[Lightning]</a>
+<a href="https://drive.google.com/file/d/1xY9IXshFPxTFWqcCQuvnkfDVw06rVz_s/view?usp=sharing" style="color:#FF0000;" target="_blank">[Main Talk]</a>
+
+<!-- <a href="https://openreview.net/pdf?id=r1x-E5Ss34" target="_blank">[PDF]</a> <a href="https://drive.google.com/file/d/12PYcMe0ehVeogz0peUEQsjO-EyMpdrc1/view?usp=sharing" target="_blank">
+  [Project Page]</a> -->
+</p>
+<div id="bib_FPRakerMICRO2021" class="bibtex noshow">
+<pre>
+@inproceedings{10.1145/3466752.3480106,
+author = {Awad, Omar Mohamed and Mahmoud, Mostafa and Edo, Isak and Zadeh, Ali Hadi and Bannon, Ciaran and Jayarajan, Anand and Pekhimenko, Gennady and Moshovos, Andreas},
+title = {FPRaker: A Processing Element For Accelerating Neural Network Training},
+year = {2021},
+isbn = {9781450385572},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3466752.3480106},
+doi = {10.1145/3466752.3480106},
+pages = {857–869},
+numpages = {13},
+location = {Virtual Event, Greece},
+series = {MICRO '21}
+}
+</pre>
+</div>
+<div id="bib_FPRakerMICRO2021abs" class="bibtex noshow">
+We present FPRaker, a processing element for composing training accelerators. FPRaker processes several floatingpoint multiply-accumulation operations concurrently and accumulates their result into a higher precision accumulator. FPRaker
+boosts performance and energy efficiency during training by
+taking advantage of the values that naturally appear during
+training. It processes the significand of the operands of each
+multiply-accumulate as a series of signed powers of two. The
+conversion to this form is done on-the-fly. This exposes ineffectual
+work that can be skipped: values when encoded have few terms
+and some of them can be discarded as they would fall outside the
+range of the accumulator given the limited precision of floatingpoint. FPRaker also takes advantage of spatial correlation in
+values across channels and uses delta-encoding off-chip to reduce
+memory footprint and bandwidth. We demonstrate that FPRaker
+can be used to compose an accelerator for training and that
+it can improve performance and energy efficiency compared
+to using optimized bit-parallel floating-point units under isocompute area constraints. We also demonstrate that FPRaker
+delivers additional benefits when training incorporates pruning
+and quantization. Finally, we show that FPRaker naturally
+amplifies performance with training methods that use a different
+precision per layer.
+</div>
+</li>
+
+<li ><p>A. Hadi Zadeh, I. Edo, <a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, A. Moshovos
+<br><b>GOBO : Quantizing Attention-Based NLP Models for Low Latency and Energy Efficient Inference</b><br>
+<i>53rd IEEE/ACM International Symposium on Microarchitecture (MICRO)</i>, 2020.
+<br />
+<a href="javascript:toggleBibtex('GOBOMICRO2020')" style="color:#FF0000;">[BibTeX]</a>
+<a href="javascript:toggleBibtex('GOBOMICRO2020abs')" style="color:#FF0000;">[Abstract]</a>
+<a href="https://www.microarch.org/micro53/papers/738300a811.pdf" style="color:#FF0000;" target="_blank">[PDF]</a>
+<!-- <a href="https://openreview.net/pdf?id=r1x-E5Ss34" target="_blank">[PDF]</a> <a href="https://drive.google.com/file/d/12PYcMe0ehVeogz0peUEQsjO-EyMpdrc1/view?usp=sharing" target="_blank">
+  [Project Page]</a> -->
+</p>
+<div id="bib_GOBOMICRO2020" class="bibtex noshow">
+<pre>
+@inproceedings{DBLP:conf/micro/ZadehEAM20,
+  author    = {Ali Hadi Zadeh and
+               Isak Edo and
+               Omar Mohamed Awad and
+               Andreas Moshovos},
+  title     = {GOBO: Quantizing Attention-Based {NLP} Models for Low Latency and
+               Energy Efficient Inference},
+  booktitle = {53rd Annual {IEEE/ACM} International Symposium on Microarchitecture,
+               {MICRO} 2020, Athens, Greece, October 17-21, 2020},
+  pages     = {811--824},
+  publisher = ,
+  year      = {2020},
+  url       = {https://doi.org/10.1109/MICRO50266.2020.00071},
+  doi       = {10.1109/MICRO50266.2020.00071},
+  timestamp = {Tue, 17 Nov 2020 13:33:12 +0100},
+  biburl    = {https://dblp.org/rec/conf/micro/ZadehEAM20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</pre>
+</div>
+<div id="bib_GOBOMICRO2020abs" class="bibtex noshow">
+Attention-based models have demonstrated remarkable success in various natural language understanding tasks.
+However, efficient execution remains a challenge for these models
+which are memory-bound due to their massive number of
+parameters. We present GOBO, a model quantization technique
+that compresses the vast majority (typically 99.9%) of the 32-
+bit floating-point parameters of state-of-the-art BERT models
+and their variants to 3 bits while maintaining their accuracy.
+Unlike other quantization methods, GOBO does not require finetuning nor retraining to compensate for the quantization error.
+We present two practical hardware applications of GOBO. In
+the first GOBO reduces memory storage and traffic and as a
+result inference latency and energy consumption. This GOBO
+memory compression mechanism is plug-in compatible with
+many architectures; we demonstrate it with the TPU, Eyeriss,
+and an architecture using Tensor Cores-like units. Second, we
+present a co-designed hardware architecture that also reduces
+computation. Uniquely, the GOBO architecture maintains most
+of the weights in 3b even during computation, a property
+that: (i) makes the processing elements area efficient, allowing
+us to pack more compute power per unit area, (ii) replaces
+most multiply-accumulations with additions, and (iii) reduces the
+off-chip traffic by amplifying on-chip memory capacity.
+</div>
+</li>
+
+<li ><p>M. Mahmoud, I. Edo, A. Hadi Zadeh, <a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, J. Albericio, A. Moshovos
+<br><b>TensorDash : Exploiting Sparsity to Accelerate Neural Network Training</b><br>
+<i>53rd IEEE/ACM International Symposium on Microarchitecture (MICRO)</i>, 2020.
+<br />
+<a href="javascript:toggleBibtex('TensorDashMICRO2020')" style="color:#FF0000;">[BibTeX]</a>
+<a href="javascript:toggleBibtex('TensorDashMICRO2020abs')" style="color:#FF0000;">[Abstract]</a>
+<a href="https://www.cs.toronto.edu/ecosystem/papers/MICRO_21/TensorDash.pdf" style="color:#FF0000;" target="_blank">[PDF]</a>
+<!-- <a href="https://openreview.net/pdf?id=r1x-E5Ss34" target="_blank">[PDF]</a> <a href="https://drive.google.com/file/d/12PYcMe0ehVeogz0peUEQsjO-EyMpdrc1/view?usp=sharing" target="_blank">
+  [Project Page]</a> -->
+</p>
+<div id="bib_TensorDashMICRO2020" class="bibtex noshow">
+<pre>
+@inproceedings{DBLP:conf/micro/MahmoudEZAPAM20,
+  author    = {Mostafa Mahmoud and
+               Isak Edo and
+               Ali Hadi Zadeh and
+               Omar Mohamed Awad and
+               Gennady Pekhimenko and
+               Jorge Albericio and
+               Andreas Moshovos},
+  title     = {TensorDash: Exploiting Sparsity to Accelerate Deep Neural Network
+               Training},
+  booktitle = {53rd Annual {IEEE/ACM} International Symposium on Microarchitecture,
+               {MICRO} 2020, Athens, Greece, October 17-21, 2020},
+  pages     = {781--795},
+  publisher = ,
+  year      = {2020},
+  url       = {https://doi.org/10.1109/MICRO50266.2020.00069},
+  doi       = {10.1109/MICRO50266.2020.00069},
+  timestamp = {Tue, 17 Nov 2020 13:33:12 +0100},
+  biburl    = {https://dblp.org/rec/conf/micro/MahmoudEZAPAM20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</pre>
+</div>
+<div id="bib_TensorDashMICRO2020abs" class="bibtex noshow">
+TensorDash is a hardware-based technique that
+enables data-parallel MAC units to take advantage of sparsity in
+their input operand streams. When used to compose a hardware
+accelerator for deep learning, TensorDash can speedup the training process while also increasing energy efficiency. TensorDash
+combines a low-cost sparse input operand interconnect with an
+area-efficient hardware scheduler. The scheduler can effectively
+extract sparsity in the activations, the weights, and the gradients.
+Over a wide set of state-of-the-art models covering various
+applications, TensorDash accelerates the training process by
+1.95× while being 1.5× more energy efficient when incorporated
+on top of a Tensorcore-based accelerator at less than 5% area
+overhead. TensorDash is datatype agnostic and we demonstrate
+it with IEEE standard mixed-precision floating-point units and
+a popular optimized for machine learning floating-point format
+(BFloat16).
+</div>
+</li>
+
+<li ><p>A. Delmás, S. Sharify, I. Edo, D. Malone Stuart, <a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, P. Judd, M. Mahmoud, M. Nikolic, K. Siu, Z. Poulos, and A. Moshovos
+<br><b>ShapeShifter : Enabling Fine-Grain Data Width Adaptation in Deep Learning</b><br>
+<i>52nd IEEE/ACM International Symposium on Microarchitecture (MICRO)</i>, 2019.
+<br />
+<a href="javascript:toggleBibtex('ShapeshifterMICRO2020')" style="color:#FF0000;">[BibTeX]</a>
+<a href="javascript:toggleBibtex('ShapeshifterMICRO2020abs')" style="color:#FF0000;">[Abstract]</a>
+<a href="https://dl.acm.org/doi/10.1145/3352460.3358295" style="color:#FF0000;" target="_blank">[PDF]</a>
+<!-- <a href="https://openreview.net/pdf?id=r1x-E5Ss34" target="_blank">[PDF]</a> <a href="https://drive.google.com/file/d/12PYcMe0ehVeogz0peUEQsjO-EyMpdrc1/view?usp=sharing" target="_blank">
+  [Project Page]</a> -->
+</p>
+<div id="bib_ShapeshifterMICRO2020" class="bibtex noshow">
+<pre>
+@inproceedings{DBLP:conf/micro/LascorzSVSAJMNS19,
+  author    = {Alberto Delmas Lascorz and
+               Sayeh Sharify and
+               Isak Edo Vivancos and
+               Dylan Malone Stuart and
+               Omar Mohamed Awad and
+               Patrick Judd and
+               Mostafa Mahmoud and
+               Milos Nikolic and
+               Kevin Siu and
+               Zissis Poulos and
+               Andreas Moshovos},
+  title     = {ShapeShifter: Enabling Fine-Grain Data Width Adaptation in Deep Learning},
+  booktitle = {Proceedings of the 52nd Annual {IEEE/ACM} International Symposium
+               on Microarchitecture, {MICRO} 2019, Columbus, OH, USA, October 12-16,
+               2019},
+  pages     = {28--41},
+  publisher = ,
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3352460.3358295},
+  doi       = {10.1145/3352460.3358295},
+  timestamp = {Wed, 16 Oct 2019 10:12:02 +0200},
+  biburl    = {https://dblp.org/rec/conf/micro/LascorzSVSAJMNS19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</pre>
+</div>
+<div id="bib_ShapeshifterMICRO2020abs" class="bibtex noshow">
+We show that selecting a data width for all values in Deep Neural Networks, quantized or not and even if that width is different per layer, amounts to worst-case design. Much shorter data widths can be used if we target the common case by adjusting the data type width at a much finer granularity. We propose ShapeShifter, where we group weights and activations and encode them using a width specific to each group and where typical group sizes vary from 16 to 256 values. The per group widths are selected statically for the weights and dynamically by hardware for the activations. We present two applications of ShapeShifter. In the first, that is applicable to any system, ShapeShifter reduces off- and on-chip storage and communication. This ShapeShifter-based memory compression is simple and low cost yet reduces off-chip traffic to 33% and 36% for 8-bit and 16-bit models respectively. This makes it possible to sustain higher performance for a given off-chip memory interface while also boosting energy efficiency. In the second application, we show how ShapeShifter can be implemented as a surgical extension over designs that exploit variable precision in time.
+</div>
+<div id="bib_ShapeshifterMICRO2020abs" class="bibtex noshow">
+
+</div>
+</li>
+
+<li ><p>C. Kison, <a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, M. Fyrbiak, C. Paar
+<br><b>Security Implications of Intentional Capacitive Crosstalk</b><br>
+<i>IEEE Transactions on Information Forensics and Security</i>, 2019.
+<br />
+<a href="javascript:toggleBibtex('CapacitiveCrosstalk')" style="color:#FF0000;">[BibTeX]</a>
+<a href="javascript:toggleBibtex('CapacitiveCrosstalkabs')" style="color:#FF0000;">[Abstract]</a>
+<a href="https://ieeexplore.ieee.org/document/8673644" style="color:#FF0000;" target="_blank">[PDF]</a>
+<!-- <a href="https://openreview.net/pdf?id=r1x-E5Ss34" target="_blank">[PDF]</a> <a href="https://drive.google.com/file/d/12PYcMe0ehVeogz0peUEQsjO-EyMpdrc1/view?usp=sharing" target="_blank">
+  [Project Page]</a> -->
+</p>
+<div id="bib_CapacitiveCrosstalk" class="bibtex noshow">
+<pre>
+@ARTICLE{8673644,
+  author={Kison, Christian and Awad, Omar Mohamed and Fyrbiak, Marc and Paar, Christof},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Security Implications of Intentional Capacitive Crosstalk}, 
+  year={2019},
+  volume={14},
+  number={12},
+  pages={3246-3258},
+  doi={10.1109/TIFS.2019.2900914}}
+</pre>
+</div>
+<div id="bib_CapacitiveCrosstalkabs" class="bibtex noshow">
+With advances in shrinking process technology sizes, the parasitic effects of closely routed adjacent wires, crosstalk, still present problems in practice since they directly influence performance and functionality. Even though there is a solid understanding of parasitic effects in hardware designs, the security implications of such undesired effects have been scarcely investigated. In this paper, we leverage the physical routing effects of capacitive crosstalk to demonstrate a new parametric hardware Trojan design methodology. We show that such Trojans can be implemented by only rerouting already existing resources. Thus, our approach possesses a zero-gate area overhead which is both stealthy and challenging to detect with standard visual inspection techniques. In two case studies, we demonstrate its devastating consequences: (1) we realize an implementation attack on a third-party cryptographic AES IP core and (2) we realize a privilege escalation on a general-purpose processor capable of running any modern operating system. In these case studies, we take special care to ensure that the Trojans do not violate design rule checks, which further highlights that the capacitive crosstalk Trojans can be building blocks for malicious circuitry design. We then investigate how state-of-the-art visual inspection techniques can be enhanced to cope with parametric hardware Trojans. In particular, we develop an automated layout-level mitigation approach which exploits the characteristic wire length of capacitive crosstalk Trojans. Finally, we highlight further implementation strategies for capacitive crosstalk Trojans and pinpoint future research directions.
+</div>
+</li>
+
+<li ><p><a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>, Isak Edo
+<br><b>Exploiting Data Reuse in DNN accelerators</b><br>
+<i>Graduate course project @ University of Toronto</i>, 2020.
+<br />
+<img id="HAET2021_poster" src="../images/poster_dataReuse.png" style="width:1625;height:1220;">
+</li>
+
+
+<li ><p><a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>
+<br><b>FPRaker: Exploiting Fine-Grain Sparsity to Accelerate Neural Network Training</b><br>
+<i>M.A.Sc. Thesis @ University of Toronto, Canada</i>, 2021.
+<br />
+<a href="https://drive.google.com/file/d/1EvJQGewuwuawG2vE93YzaV3k4BNwdEgm/view" style="color:#FF0000;" target="_blank">[AGM2020 Lightning]</a>
+<a href="https://drive.google.com/file/d/1s16vrTjdHJNKSSLHvwU4LXmY0kEqPbC-/view" style="color:#FF0000;" target="_blank">[AGM2020 Talk]</a>
+<a href="https://drive.google.com/file/d/14kfL6tU71cTQnUOStxTO8LD5KclAH4CE/view" style="color:#FF0000;" target="_blank">[Thesis]</a>
+<style>
+.responsive-wrap iframe{ max-width: 100%;}
+</style>
+<div class="responsive-wrap">
+<!-- this is the embed code provided by Google -->
+  <iframe src="https://docs.google.com/presentation/d/1j_mpkQW-1dFUNvu-s3LN0d00Wm7_jdqS/embed?start=false&loop=false&delayms=3000&slide=id.p1" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<!-- Google embed ends -->
+</div>
+</li>
+
+<li ><p><a href="https://scholar.google.com/citations?user=oP_KjvoAAAAJ" style="color:#FF0000;" target="_blank">O. Mohamed Awad</a>
+<br><b>Implementation and Detection of Physical Hardware Trojans in a Cryptographic core based on Capacitive Crosstalk</b><br>
+<i>B.Sc. Thesis @ Ruhr University Bochum, Germany</i>, 2017.
+<br />
+<a href="https://drive.google.com/file/d/1vTfBgI5Lsv89ECSE_L7X5fROQOmhNPzm/view" style="color:#FF0000;" target="_blank">[Thesis]</a>
+</li>
+
+
+</script>
+
+      </ul>
+    </div><!-- /.article-wrap -->
+    {% if site.disqus_shortname and page.comments %}
+      <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% endif %}
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include _scripts.html %}          
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include _head.html %}
+<style>
+  .bottom-three {
+     margin-bottom: 1.5cm;
+   }
+  .bottom-small {
+     margin-bottom: 1cm;
+   }
+</style>
+</head>
+
+<body class="page">
+
+{% include _browser-upgrade.html %}
+
+{% include _navigation.html %}
+
+{% if page.image.feature %}
+  <div class="image-wrap">
+  <img src=
+    {% if page.image.feature contains 'http://' %}
+      "{{ page.image.feature }}"
+    {% elsif page.image.feature contains 'https://' %}
+      "{{ page.image.feature }}"
+    {% else %}
+      "{{ site.url }}/images/{{ page.image.feature }}"
+    {% endif %}
+  alt="{{ page.title }} feature image">
+  {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
+<div id="main" role="main">
+  <div class="article-author-side">
+    {% include _author-bio.html %}
+  </div>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <div class="article-wrap">
+
+      {{ content }}
+    <p align="center" class=bottom-small><img src="{{ site.url }}/images/CV/business.png" alt="Work Experience" width="70" height="70"></p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>Member of Technical Staff, Deep Learning Performance</strong> <br> <a href="https://www.cerebras.net/" target="_blank">Cerebras Systems </a><br>Aug 2021 - Present</p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>Machine Learning Research Engineer</strong> <br> <a href="https://www.huawei.com/ca/" target="_blank">Huawei Canada R&D </a><br>Aug 2020 - Aug 2021</p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>Graduate Research Assistant</strong> <br> <a href="https://www.ece.utoronto.ca/" target="_blank">ECE Dept., University of Toronto</a><br>Sept 2019 - Jul 2020</p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>ML Hardware Acceleration Research Intern</strong><br> <a href="https://onelab-eg.com/" target="_blank">Opto-Nano-Electronics Lab, Cairo University</a><br>Jun 2018 - Aug 2018</p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>Hardware Security Research Intern</strong> <br><a href="https://www.emsec.ruhr-uni-bochum.de/chair/home/" target="_blank">Chair of Embedded Security, Ruhr University Bochum</a><br>Feb 2017 - Sept 2017</p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>Crypto Hardware Acceleration Intern</strong><br> <a href="https://onelab-eg.com/" target="_blank">Opto-Nano-Electronics Lab, Cairo University</a><br>Aug 2016 - Sept 2016</p>
+
+
+    <p align="center" class=bottom-small><img src="{{ site.url }}/images/CV/study2.png" alt="Education" width="70" height="70"></p>
+    <p style="margin-bottom:1cm;" align="center">&#8226 <strong>M.A.Sc., </strong>Electrical and Computer Engineering @ University of Toronto<br>Specialization: Deep Learning Acceleration <br>Advisor: <a href="https://www.eecg.utoronto.ca/~moshovos/000/doku.php" target="_blank">Prof. Andreas Moshovos</a></br></p>
+    <p style="margin-bottom:1cm;" align="center" class="bottom-three">&#8226 <strong>B.Sc., </strong>Electrical and Electronics Engineering @ German University in Cairo, Thesis @ Ruhr University Bochum</a><br>Specialization: Electronics Engineering<br> Advisor: <a href="https://www.emsec.ruhr-uni-bochum.de/chair/_staff/christof-paar/" target="_blank">Prof. Christof Paar</a></br></p>
+    
+    <p align="center" class=bottom-small><img src="{{ site.url }}/images/CV/computer2.png" alt="Technical Skills" width="80" height="80"></p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 Programming: &emsp; <strong>Python</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>CUDA</strong>, MATLAB</p>
+      <p style="margin-bottom:1cm;" align="centre">&#8226 ML models: &emsp; <strong>CNN</strong>, <strong>RNN</strong>, <strong>Transformer-based (BERT, GPT-2/3, CPM, Vision Transformer)</strong></p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 ML Framework: &emsp; <strong>PyTorch</strong></p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 Scripting: &emsp; Perl, TCL, Bash</p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 <strong>Git</strong>, <strong>Docker</strong></p>
+    <p style="margin-bottom:1cm;" align="centre" class="bottom-three"> &#8226 Arhictecture Simulators: &emsp; <strong>SimpleScalar</strong> (modification), <strong>DNNsim</strong> (development)</p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 HW Design Tools: &emsp; <strong>Intel Quartus Prime</strong>, <strong>Synopsys Design Compiler</strong>, <strong>Cadence SoC Encounter/Innovus</strong>, Xilinx ISE, HSPICE & HSIM, Cadence Virtuoso, <strong>ModelSim</strong>, VCS</p>
+    <p style="margin-bottom:1cm;" align="centre">&#8226 Memory Compilers: &emsp; <strong>CACTI</strong></p>
+    
+    </div><!-- /.article-wrap -->
+    {% if site.disqus_shortname and page.comments %}
+      <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% endif %}
+  </article>
+</div><!-- /#index -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include _scripts.html %}          
+
+</body>
+</html>
